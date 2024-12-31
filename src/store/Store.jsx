@@ -6,11 +6,6 @@ const StoreContext = createContext();
 //create reducer
 function reducer(state, action) {
     switch (action.type) {
-        case 'SET_ACTIVE_SECTION':     
-            return {
-                ...state,
-                activeSection: action.payload,
-            };
         case 'navOnOf':
             
             return {
