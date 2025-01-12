@@ -4,7 +4,8 @@ import drumsMachineImg from "@assets/proyectos/drumsMachine.webp";
 import markdownPreviewerImg from "@assets/proyectos/markdownPreviewer.webp";
 import randomQuoteMachineImg from "@assets/proyectos/randomQuoteMachine.webp";
 
-export const PROYECTOS = [
+
+const portfolioProjects = [
     {
       name: "25 + 5 Clock",
       src: pomodoroImg,
@@ -50,3 +51,5 @@ export const PROYECTOS = [
       tecnologiasUsadas: "HTML, CSS, Javascript, Jquery, Git",
     },
   ];
+
+  export default portfolioProjects;

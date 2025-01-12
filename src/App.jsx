@@ -1,11 +1,11 @@
-import "./App.css";
-import { Store } from "./store/Store";
-import Header from "./components/Header";
-import SobreMi from "./components/SobreMi";
+
+import { Store } from "@store/Store";
+import Header from "@components/header/Header.jsx";
+import SobreMi from "@components/aboutMe/AboutMe.jsx";
 import Habilidades from "@components/skills/Skills.jsx";
-import Proyectos from "./components/Proyectos";
+import Projects from "@components/projects/Projects.jsx";
 import Contact from '@components/contact/contact.jsx'
-import Footer from "./components/Footer";
+import Footer from "@components/footer/Footer.jsx";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Header />
           <SobreMi />
           <Habilidades />
-          <Proyectos autoSlide={false} />
+          <Projects autoSlide={false} />
           <Contact />
           <Footer />
       </div>

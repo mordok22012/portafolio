@@ -4,20 +4,22 @@ import { Button } from "flowbite-react";
 import { SiNetlify } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io5";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { PROYECTOS } from "@data/projects"
+import portfolioProjects from "@data/portfolioProjects.js"
 
 
-const Proyectos = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
-  const [proyectoActual, setProyectoActual] = useState(0);
+const Projects = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
+    
+//   const [proyectoActual, setProyectoActual] = useState(0);
+    const [currentProject, setCurrentProject] = useState(0);
 
-  // Cambiar proyecto
+  // Cambiar proyecto logica
   const handleProjectChange = (direction) => {
-    setProyectoActual((prev) =>
+    setCurrentProject((prev) =>
       direction === "prev"
         ? prev === 0
-          ? PROYECTOS.length - 1
+          ? portfolioProjects.length - 1
           : prev - 1
-        : prev === PROYECTOS.length - 1
+        : prev === portfolioProjects.length - 1
         ? 0
         : prev + 1
     );
@@ -39,18 +41,18 @@ const Proyectos = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
 
       {/* Información del proyecto actual */}
       <div className="mb-4 text-center">
-        <h3 className="text-xl font-bold">{PROYECTOS[proyectoActual].name}</h3>
-        <p className="text-pretty px-4">{PROYECTOS[proyectoActual].descripcion}</p>
+        <h3 className="text-xl font-bold">{portfolioProjects[currentProject].name}</h3>
+        <p className="text-pretty px-4">{portfolioProjects[currentProject].descripcion}</p>
       </div>
 
       {/* Slider */}
       <div className="w-3/5 md:max-w-lg overflow-hidden relative rounded-md">
         <div
           className="flex transition-transform ease-out duration-500"
-          style={{ transform: `translateX(-${proyectoActual * 100}%)` }}
+          style={{ transform: `translateX(-${currentProject * 100}%)` }}
         >
-          {PROYECTOS.map((proyecto, i) => (
-            <img key={i} src={proyecto.src} alt={proyecto.descripcion} />
+          {portfolioProjects.map((project, i) => (
+            <img key={i} src={project.src} alt={project.descripcion} />
           ))}
         </div>
 
@@ -74,11 +76,11 @@ const Proyectos = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
 
         {/* Indicadores */}
         <div className="absolute bottom-2 right-0 left-0 flex items-center justify-center gap-2">
-          {PROYECTOS.map((_, i) => (
+          {portfolioProjects.map((_, i) => (
             <div
               key={i}
               className={`transition-all w-2 h-2 rounded-full ${
-                proyectoActual === i ? "bg-gray-800 p-1" : "bg-gray-400"
+                currentProject === i ? "bg-gray-800 p-1" : "bg-gray-400"
               }`}
             />
           ))}
@@ -88,7 +90,7 @@ const Proyectos = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
       {/* Enlaces */}
       <Button.Group className="mt-2">
         <a
-          href={PROYECTOS[proyectoActual].link}
+          href={portfolioProjects[currentProject].link}
           target="_blank"
           rel="noopener noreferrer"
           className="mr-4"
@@ -98,7 +100,7 @@ const Proyectos = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
         </a>
 
         <a
-          href={PROYECTOS[proyectoActual].github}
+          href={portfolioProjects[currentProject].github}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Ver proyecto en GitHub"
@@ -110,4 +112,4 @@ const Proyectos = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
   );
 };
 
-export default Proyectos;
+export default Projects;

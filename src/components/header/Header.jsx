@@ -1,8 +1,8 @@
-import React,{ useRef, useEffect, useState } from "react";
-import {NavHeader} from "./nav";
+import React,{ useRef, useEffect} from "react";
+import {NavHeader} from "@components/nav.jsx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
-import { useStore } from "../store/Store";
+import { useStore } from "@store/Store.jsx";
 
 
 

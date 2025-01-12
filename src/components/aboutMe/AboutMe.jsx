@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { useStore } from "../store/Store";
-import avatar from "../assets/webdeveloperflatline.svg";
+
+import avatar from "@assets/webdeveloperflatline.svg";
 import { PiHandWavingFill } from "react-icons/pi";
 
 const SobreMi = () => {
@@ -9,7 +8,7 @@ const SobreMi = () => {
     <section
       id="sobreMi"
       className=" flex flex-col justify-start items-center  text-white h-screen   w-full relative"
-      //ref={sectionRef}
+      
     >
       <div id="img-hero" className="h-3/5 w-full " >
         <img src={avatar} alt="hero img" className="w-full h-full object-fill " />

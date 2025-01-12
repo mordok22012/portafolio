@@ -9,7 +9,7 @@ const FormInput = ({
   register,
   inputName,
   validationRules,
-  errors,
+  
 }) => {
   return (
     <div className="mb-2 block">

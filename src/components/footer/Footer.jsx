@@ -1,14 +1,14 @@
 "use client";
-
+import React from "react";
 import { Avatar, Button, Badge } from "flowbite-react";
-import logo from "../assets/me.webp";
-import linkedinIcon from "../assets/icons/linkedin.svg";
-import gitHubIcon from "../assets/icons/github.svg";
-import reactIcon from "../assets/icons/react.svg";
-import tailwindIcon from "../assets/icons/tailwind.svg";
-import reactIconsWeb from "../assets/icons/reactIcon.svg";
-import flowbiteIcon from "../assets/icons/flowbiteReact.svg";
-import { NavFooter } from "./nav";
+import logo from "@assets/me.webp";
+import linkedinIcon from "@assets/icons/linkedin.svg";
+import gitHubIcon from "@assets/icons/github.svg";
+import reactIcon from "@assets/icons/react.svg";
+import tailwindIcon from "@assets/icons/tailwind.svg";
+import reactIconsWeb from "@assets/icons/reactIcon.svg";
+import flowbiteIcon from "@assets/icons/flowbiteReact.svg";
+import { NavFooter } from "@components/nav.jsx";
 
 // Herramientas principales usadas para crear el sitio
 const TECNOLOGIAS = [
@@ -28,14 +28,23 @@ const SocialLink = ({ href, icon, alt }) => (
   </a>
 );
 
-const TechnologyItem = ({ icon, name, clase }) => (
-  <li className="flex items-center gap-2">
-    <img src={icon} alt={name} className={`size-5 ${clase || ""}`} />
-    <Badge size="sm" className="bg-inherit text-current">
-      {name}
-    </Badge>
-  </li>
-);
+const TechnologyItem = React.memo(({ icon, name, clase }) => (
+    <li className="flex items-center gap-2">
+      <img src={icon} alt={name} className={`size-5 ${clase || ""}`} />
+      <Badge size="sm" className="bg-inherit text-current">
+        {name}
+      </Badge>
+    </li>
+  ));
+
+  const AvatarContent = React.memo(() => (
+    <div className="space-y-1 font-medium dark:text-white">
+      <div>Agustín Dorta</div>
+      <div className="text-sm text-gray-500 dark:text-gray-400">Programador Web</div>
+    </div>
+  ));
+  
+  
 
 export default function Footer() {
   return (
@@ -46,12 +55,7 @@ export default function Footer() {
         {/* Sección Izquierda */}
         <div className="flex flex-col justify-center items-start p-2">
           <Avatar img={logo} rounded>
-            <div className="space-y-1 font-medium dark:text-white">
-              <div>Agustín Dorta</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">
-                Programador Web
-              </div>
-            </div>
+            <AvatarContent />
           </Avatar>
 
           <p className="text-pretty mt-4 md:max-w-80">
