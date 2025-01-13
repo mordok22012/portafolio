@@ -1,6 +1,6 @@
 {
   "name": "portafolio-tailwind",
-  "private": true,
+  "private": false,
   "homepage": "https://github.com/mordok22012/portafolio",
   "version": "0.0.0",
   "type": "module",

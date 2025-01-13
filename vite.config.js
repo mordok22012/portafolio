@@ -15,4 +15,5 @@ export default defineConfig({
       '@data': '/src/data',
     },
   },
+  base:'https://mordok22012.github.io/portafolio',
 })
