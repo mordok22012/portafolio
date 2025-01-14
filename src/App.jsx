@@ -17,7 +17,7 @@ function App() {
           <Header />
           <SobreMi />
           <Habilidades />
-          <Projects autoSlide={false} />
+          <Projects autoSlide={true} />
           <Contact />
           <Footer />
       </div>
