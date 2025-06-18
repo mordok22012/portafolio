@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Label, Textarea, Button } from "flowbite-react";
 import { HiMail } from "react-icons/hi";
 import { IoPersonSharp } from "react-icons/io5";
@@ -70,8 +70,14 @@ const ContactForm = () => {
         register={register}
         validationRules={{
           required: "Nombre requerido",
-          maxLength: { value: 20, message: "Nombre no debe ser mayor a 20 caracteres" },
-          minLength: { value: 2, message: "Nombre debe ser mayor a 2 caracteres" },
+          maxLength: {
+            value: 20,
+            message: "Nombre no debe ser mayor a 20 caracteres",
+          },
+          minLength: {
+            value: 2,
+            message: "Nombre debe ser mayor a 2 caracteres",
+          },
           pattern: {
             value: /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/,
             message: "El nombre solo puede contener letras",
@@ -79,7 +85,11 @@ const ContactForm = () => {
         }}
         errors={errors}
       />
-      {errors.name && <span className="block text-rose-600 text-xs">{errors.name.message}</span>}
+      {errors.name && (
+        <span className="block text-rose-600 text-xs">
+          {errors.name.message}
+        </span>
+      )}
 
       <FormInput
         type="email"
@@ -97,22 +107,38 @@ const ContactForm = () => {
         }}
         errors={errors}
       />
-      {errors.email && <span className="block text-rose-600 text-xs">{errors.email.message}</span>}
+      {errors.email && (
+        <span className="block text-rose-600 text-xs">
+          {errors.email.message}
+        </span>
+      )}
 
       <div className="mb-2 block">
-        <Label htmlFor="textAreaMessage" value="Mensaje" className="text-white pb-2" />
+        <Label
+          htmlFor="textAreaMessage"
+          value="Mensaje"
+          className="text-white pb-2"
+        />
         <Textarea
           id="mensaje"
           placeholder="Escribe tu mensaje..."
           rows={4}
           {...register("textAreaMessage", {
             required: "El mensaje es obligatorio",
-            minLength: { value: 10, message: "El mensaje debe tener al menos 10 caracteres" },
-            maxLength: { value: 200, message: "El mensaje no debe exceder 200 caracteres" },
+            minLength: {
+              value: 10,
+              message: "El mensaje debe tener al menos 10 caracteres",
+            },
+            maxLength: {
+              value: 200,
+              message: "El mensaje no debe exceder 200 caracteres",
+            },
           })}
         />
         {errors.textAreaMessage && (
-          <span className="block text-rose-600 text-xs">{errors.textAreaMessage.message}</span>
+          <span className="block text-rose-600 text-xs">
+            {errors.textAreaMessage.message}
+          </span>
         )}
       </div>
 
@@ -136,6 +162,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-
-

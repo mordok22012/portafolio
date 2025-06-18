@@ -1,5 +1,4 @@
-import React from "react";
-import { Label, Textarea, Button } from "flowbite-react";
+import { Label } from "flowbite-react";
 
 const FormInput = ({
   icon: Icon,
@@ -9,7 +8,6 @@ const FormInput = ({
   register,
   inputName,
   validationRules,
-  
 }) => {
   return (
     <div className="mb-2 block">
@@ -17,7 +15,9 @@ const FormInput = ({
       <div className="flex">
         <div className="relative w-full">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            {Icon && <Icon className="h-5 w-5 text-gray-500 dark:text-gray-400" />}
+            {Icon && (
+              <Icon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+            )}
           </div>
           <input
             type={type}
@@ -27,18 +27,8 @@ const FormInput = ({
           />
         </div>
       </div>
-      
-
     </div>
   );
 };
 
 export { FormInput };
-
-// // pattern of correo pattern: {
-//             value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-//             message: "Correo no válido",
-//           },
-
-
-

@@ -1,3 +1,4 @@
+import weatherApp from "@assets/proyectos/weatherApp.webp";
 import pomodoroImg from "@assets/proyectos/pomodoro.webp";
 import calculatorImg from "@assets/proyectos/calculator.webp";
 import drumsMachineImg from "@assets/proyectos/drumsMachine.webp";
@@ -6,13 +7,21 @@ import randomQuoteMachineImg from "@assets/proyectos/randomQuoteMachine.webp";
 
 
 const portfolioProjects = [
+  {
+      name: "Weather app",
+      src: weatherApp,
+      link: "https://weatherapp-weatherapi.netlify.app/",
+      github: "https://github.com/mordok22012/weatherApp",
+      descripcion: 'Consulta el clima actual y el pronóstico de los próximos días usando una interfaz atractiva, rápida y responsiva.',
+      tecnologiasUsadas: "HTML, SCSS, JavaScript, React",
+    },
     {
       name: "25 + 5 Clock",
       src: pomodoroImg,
       link: "https://cdpn.io/pen/debug/eYwYYbz?authentication_hash=PNAvYgowvWvr",
       github: "https://codepen.io/mordok22012/pen/eYwYYbz",
-      descripcion: '"Pomodoro 25 + 5 Clock" hecho en React con React-icons.',
-      tecnologiasUsadas: "HTML, SCSS, JavaScript, React",
+      descripcion: '"Pomodoro 25 + 5 Clock" que permite cambiar entre bloques de productividad y descanso.',
+      tecnologiasUsadas: "React, TypeScript, Tailwind CSS",
     },
     {
       name: "Calculator",

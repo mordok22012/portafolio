@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "flowbite-react";
 import { SiNetlify } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io5";
