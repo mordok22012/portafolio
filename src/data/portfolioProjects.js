@@ -18,8 +18,8 @@ const portfolioProjects = [
     {
       name: "25 + 5 Clock",
       src: pomodoroImg,
-      link: "https://cdpn.io/pen/debug/eYwYYbz?authentication_hash=PNAvYgowvWvr",
-      github: "https://codepen.io/mordok22012/pen/eYwYYbz",
+      link: "https://pomodoroapp25-o-clock.netlify.app/",
+      github: "https://github.com/mordok22012/PomodoroApp",
       descripcion: '"Pomodoro 25 + 5 Clock" que permite cambiar entre bloques de productividad y descanso.',
       tecnologiasUsadas: "React, TypeScript, Tailwind CSS",
     },
