@@ -7,7 +7,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import portfolioProjects from "@data/portfolioProjects.js"
 
 
-const Projects = ({ autoSlide = false, autoSlideInterval = 4000 }) => {
+const Projects = ({ autoSlide = false, autoSlideInterval = 10000 }) => {
     
 //   const [proyectoActual, setProyectoActual] = useState(0);
     const [currentProject, setCurrentProject] = useState(0);
